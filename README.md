@@ -23,10 +23,7 @@ Overview of the approach:
     and to understand the effect of each type of holiday on the sales.
 2. Selecting and creating new features, including date-related features, lag variables, exponentially weighted moving averages,
     and holiday-related features grouped by type or description.   
-3. Each exponentially weighted moving average was calculated using different shift and span values. To be specific, span values were 4 and 30, and for 
-    each span value shift values were 1, 16 and 365. Same XGBoost model was fitted separately with data containing only one type of shift values in 
-    addition to other non-lag features. The three outputs from the three distinct fitted models, then, were combined with varying weights depending on 
-    the number of days since the first test date.
+3. Exponentially weighted moving averages (EWMAs) were computed using two different span values: 4 and 30. For each span, three shift values were applied: 1, 16, and 365 days. A separate XGBoost regression model was trained for each group of features containing a specific shift value, along with other non-lag features. The predictions from the three models (corresponding to shift values of 1, 16, and 365) were then combined using a weighted average, where the weights varied depending on the number of days since the first test date.
 4. Date based weights were used, for the XGBoost models, to assign higher weight to recent data points.
 5. A sliding window validation was created to assess model performance. Root mean squared logarithmic error was used to measure error. 
 
