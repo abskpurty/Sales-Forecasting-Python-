@@ -2,6 +2,7 @@
 
 The dataset belongs to a Kaggle beginner competition, "Store Sales - Time Series Forecasting". The competition runs indefinitely with a rolling leaderboard.
 Link: https://www.kaggle.com/competitions/store-sales-time-series-forecasting/overview
+
 About Dataset:
 
 There are 5 files:
